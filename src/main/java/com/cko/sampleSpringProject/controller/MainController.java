@@ -11,4 +11,14 @@ public class MainController {
         return "login";
     }
 
+    @GetMapping("/")
+    public String showMainPage() {
+        return "mainPage";
+    }
+
+    @GetMapping("/game/tiktaktoe")
+    public String showGamePage() {
+        return "jshtml";
+    }
+
 }
