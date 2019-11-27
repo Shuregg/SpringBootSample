@@ -21,4 +21,13 @@ public class MainController {
         return "jshtml";
     }
 
+    @GetMapping("/films")
+    public String showFilmsPage() { return "filmsPage";}
+    @GetMapping("/films/all")
+    public String showAllFilmsPage() { return "filmsPage";}
+
+    @GetMapping("/films/new")
+    public String showCreateFilmPage() { return "newFilm";}
+
+
 }
