@@ -7,6 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Optional;
 
 
 @Controller
@@ -16,11 +20,15 @@ public class FilmController {
     @Autowired
     FilmDAO filmDAO;
     @GetMapping("/all")
-    public String showAllFilmsPage() { return "filmsPage";}
+    public String showAllFilmsPage() {
+
+
+
+        return "filmsPage";
+    }
 
     @GetMapping("/new")
     public String showCreateFilmPage() { return "newFilm";}
-
 
     @PostMapping("/new")
     public String addNewFilm(Film film) {
@@ -28,6 +36,20 @@ public class FilmController {
         return "filmsPage";
     }
 
+    @GetMapping("/editFilm")
+    public ModelAndView showEditFilmPage(@RequestParam Long id) {
+        ModelAndView modelAndView = new ModelAndView();
+        Film film = filmDAO.findFilmById(id);
+        modelAndView.addObject("film", film);
+        modelAndView.setViewName("editFilm");
+        return modelAndView;
+    }
+
+    @PostMapping("/editFilm")
+    public String editFilm(Film film) {
+        filmDAO.save(film);
+        return  "filmsPage";
+    }
 
 
 }

@@ -5,5 +5,6 @@ import com.cko.sampleSpringProject.model.User;
 import org.springframework.data.repository.CrudRepository;
 
 public interface FilmDAO extends CrudRepository<Film,Long> {
-
+    Film findFilmById(Long id);
+    Film findFilmByTitle(String title);
 }
