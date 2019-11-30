@@ -49,10 +49,12 @@
             <div class="input-group-prepend">
                 <span class="input-group-text">Title, rating and age</span>
             </div>
-            <input type="text" aria-label="Name" class="form-control">
-            <input type="text" aria-label="Rating" class="form-control">
-            <input type="text" aria-label="Age" class="form-control">
-              <button align="center" type="button" class="btn btn-primary">Add</button>
+            <form action="/films/new" method="post">
+                <input name="title" type="text" aria-label="Name" class="form-control" placeholder="Name">
+                <input name="rating" type="text" aria-label="Rating" class="form-control" placeholder="Rating">
+                <input name="age" type="text" aria-label="Age" class="form-control" placeholder="Age">
+                <button align="center" type="submit" class="btn btn-primary">Add</button>
+            </form>
         </div>
       
     </div>
