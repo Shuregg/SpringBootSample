@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -20,11 +21,13 @@ public class FilmController {
     @Autowired
     FilmDAO filmDAO;
     @GetMapping("/all")
-    public String showAllFilmsPage() {
+    public ModelAndView showAllFilmsPage() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("filmsPage");
+        List<Film> filmsList = filmDAO.findAll();
+        modelAndView.addObject("films", filmsList);
 
-
-
-        return "filmsPage";
+        return modelAndView;
     }
 
     @GetMapping("/new")

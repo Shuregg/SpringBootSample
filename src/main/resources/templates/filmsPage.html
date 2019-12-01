@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <link rel="stylesheet" type="text/css" href="siteDesign.css">
@@ -45,111 +45,26 @@
     </div>
     <h1 align="center">Well, hello there!</h1>
     <div class="container">
-        <div class="row">
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Rating</th>
+                <th scope="col">Age</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="film : ${films}">
+                <td th:text="${film.id}"></td>
+                <td th:text="${film.title}"></td>
+                <td th:text="${film.rating}"></td>
+                <td th:text="${film.age}"></td>
+            </tr>
 
-            <div class="col">
-                <h3>Title</h3>
-                <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Untouchable</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Back to the Future</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Robots</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Little big story</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col">
-               <h3>Rating</h3>
-                <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">36</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">54</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">57</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">68</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col">
-               <h3>Age</h3>
-                <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">18+</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">16+</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">6+</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">99+</li>
-                    </ul>
-                </div>
-            </div>
-
-
-            <div class="col">
-                <b>Parameters</b>
-                <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><button type="button" class="btn btn-primary btn-sm">Edit</button><button type="button" class="btn btn-danger btn-sm">Delete</button></li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><button type="button" class="btn btn-primary btn-sm">Edit</button><button type="button" class="btn btn-danger btn-sm">Delete</button></li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><button type="button" class="btn btn-primary btn-sm">Edit</button><button type="button" class="btn btn-danger btn-sm">Delete</button></li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><button type="button" class="btn btn-primary btn-sm">Edit</button><button type="button" class="btn btn-danger btn-sm">Delete</button></li>
-                    </ul>
-                </div>
-                  <div class="row">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><button href="newFilm.html" type="button" class="btn btn-info btn-sm">New</button>
-                    </ul>
-                </div>
-            </div>
-
-
-
-
+            </tbody>
+        </table>
         </div>
 
 
