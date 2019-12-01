@@ -4,11 +4,9 @@ import com.cko.sampleSpringProject.dao.FilmDAO;
 import com.cko.sampleSpringProject.model.Film;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 import java.util.Optional;
@@ -34,9 +32,10 @@ public class FilmController {
     public String showCreateFilmPage() { return "newFilm";}
 
     @PostMapping("/new")
-    public String addNewFilm(Film film) {
+    public RedirectView addNewFilm(Film film) {
         System.out.println(film.getTitle());
-        return "filmsPage";
+
+        return new RedirectView("/films/all");
     }
 
     @GetMapping("/editFilm")
@@ -49,11 +48,18 @@ public class FilmController {
     }
 
     @PostMapping("/editFilm")
-    public String editFilm(Film film) {
+    public RedirectView editFilm(Film film) {
         filmDAO.save(film);
-        return  "filmsPage";
+        return new RedirectView("/films/all");
     }
 
+    @GetMapping("/deleteFilm")
+    public RedirectView deleteFilm(@RequestParam Long id) {
+        RedirectView redirectView = new RedirectView();
+        filmDAO.deleteById(id);
+        return new RedirectView("/films/all");
+
+    }
 
 }
 

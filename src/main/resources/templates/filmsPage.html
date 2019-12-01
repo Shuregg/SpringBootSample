@@ -61,6 +61,10 @@
                 <td th:text="${film.title}"></td>
                 <td th:text="${film.rating}"></td>
                 <td th:text="${film.age}"></td>
+                <td>
+                    <a class="btn btn-info" th:href="@{'/films/editFilm?id=' + ${film.id}}">Edit</a>
+                    <a class="btn btn-danger" th:href="@{'/films/deleteFilm?id=' + ${film.id}}">Delete</a>
+                </td>
             </tr>
 
             </tbody>
