@@ -2,6 +2,7 @@ package com.cko.sampleSpringProject.controller;
 
 import com.cko.sampleSpringProject.dao.FilmDAO;
 import com.cko.sampleSpringProject.model.Film;
+import com.cko.sampleSpringProject.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -47,8 +48,8 @@ public class FilmController {
         return modelAndView;
     }
 
-    @PostMapping("/editFilm")
-    public RedirectView editFilm(Film film) {
+    @PostMapping("/editProduct")
+    public RedirectView editProduct(Film film) {
         filmDAO.save(film);
         return new RedirectView("/films/all");
     }
