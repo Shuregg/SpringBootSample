@@ -25,7 +25,7 @@ public class ProductController {
     @GetMapping("/all")
     public ModelAndView showAllProductsPage() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("allProducts");
+        modelAndView.setViewName("productsPage"); //Name of the HTML file
         List<Product> productsList = productDAO.findAll();
         modelAndView.addObject("products", productsList);
 
