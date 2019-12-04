@@ -48,12 +48,11 @@
         <div class="input-group-prepend">
             <span class="input-group-text">Title, rating and age</span>
         </div>
-        <form action="/films/editFilm" method="post">
-            <input name="id" type="text" aria-label="Name" class="form-control" placeholder="Name" th:value="${film.id}" readonly>
-            <input name="title" type="text" aria-label="Name" class="form-control" placeholder="Name" th:value="${film.title}">
-            <input name="rating" type="text" aria-label="Rating" class="form-control" placeholder="Rating" th:value="${film.rating}">
-            <input name="age" type="text" aria-label="Age" class="form-control" placeholder="Age" th:value="${film.age}">
-            <button align="center" type="submit" class="btn btn-primary">Create</button>
+        <form action="/films/new" method="post">
+            <input name="title" type="text" aria-label="Name" class="form-control" placeholder="Name">
+            <input name="rating" type="text" aria-label="Rating" class="form-control" placeholder="Rating">
+            <input name="age" type="text" aria-label="Age" class="form-control" placeholder="Age">
+            <button align="center" type="submit" class="btn btn-primary">Add</button>
         </form>
     </div>
 
