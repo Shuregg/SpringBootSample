@@ -46,7 +46,7 @@ public class ProductController {
     public ModelAndView showEditProductPage(@RequestParam Long id) {
         ModelAndView modelAndView = new ModelAndView();
         Product product = productDAO.findProductById(id);
-        modelAndView.addObject("products", product);
+        modelAndView.addObject("product", product);
         modelAndView.setViewName("editProduct");
         return modelAndView;
     }

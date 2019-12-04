@@ -48,7 +48,7 @@ public class FilmController {
         return modelAndView;
     }
 
-    @PostMapping("/editProduct")
+    @PostMapping("/editFilm")
     public RedirectView editProduct(Film film) {
         filmDAO.save(film);
         return new RedirectView("/films/all");
