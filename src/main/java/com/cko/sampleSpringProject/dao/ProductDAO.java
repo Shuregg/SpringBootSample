@@ -12,4 +12,5 @@ public interface ProductDAO extends CrudRepository<Product, Long> {
     Product findProductByPrice(int price);
     Product findProductByAmount(int amount);
     List<Product> findAll();
+    Product buyProduct(Long id);
 }

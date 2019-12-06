@@ -64,6 +64,18 @@ public class ProductController {
         return new RedirectView("/products/all");
 
     }
+    @GetMapping("/buyProduct")
+    public RedirectView buyProduct(@RequestParam Long id) {
+        RedirectView redirectView = new RedirectView();
+        productDAO.buyProduct(id);
+        return new RedirectView("/products/all");
+    }
+    @PostMapping("/buyProduct")
+    public RedirectView buyProduct(Product product) {
+        productDAO.save(product);
+        return new RedirectView("/products/all");
+    }
+
 
 }
 
