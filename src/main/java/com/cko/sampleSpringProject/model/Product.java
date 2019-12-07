@@ -40,7 +40,7 @@ public class Product {
     public void setPrice(int price) {
         this.price = price;
     }
-    public void setName(int amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 

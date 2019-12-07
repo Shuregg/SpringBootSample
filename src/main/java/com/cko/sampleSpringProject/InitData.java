@@ -69,8 +69,9 @@ public class InitData {
         }
     }
     private void initProducts() {
+
         for (int i = 0; i < 10; i++) {
-            Product product = new Product( faker.name().username(), i * 2, faker.random().nextInt(0, 9999));
+            Product product = new Product( faker.name().username(), i * 2, faker.random().nextInt(0, 9));
             productDAO.save(product);
         }
     }

@@ -63,7 +63,7 @@
                 <td th:text="${product.amount}"></td>
                 <td>
                     <a class="btn btn-info" th:href="@{'/products/editProduct?id=' + ${product.id}}">Edit</a>
-                    <a class="btn btn-danger" th:href="@{'/products/buy?id=' + ${product.id}}" >Buy</a>
+                    <a class="btn btn-danger"  th:href="@{'/products/buyProduct?id=' + ${product.id}}" th:if="${product.amount > 0}" >Buy</a>
                 </td>
             </tr>
 
