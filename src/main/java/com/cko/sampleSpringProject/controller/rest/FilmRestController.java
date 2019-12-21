@@ -3,10 +3,7 @@ package com.cko.sampleSpringProject.controller.rest;
 import com.cko.sampleSpringProject.dao.FilmDAO;
 import com.cko.sampleSpringProject.model.Film;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,6 +24,10 @@ public class FilmRestController {
     public List<Film> getAllFilms()  {
          List<Film> films = filmDAO.findAll();
          return films;
+    }
+    @PostMapping("/new")
+    public void addFilm(@RequestBody Film film) {
+        filmDAO.save(film);
     }
 
 }

@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Film list</title>
 </head>
@@ -16,67 +17,99 @@
 <body>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <!--   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
 <script type="application/javascript" src="/js/filmsPage.js"></script> <!-- JS FILE-->
 
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="siteDesign.html">
-            <img src="https://filacoahuila.com/wp-content/uploads/2019/11/Coffee-cup-Cafe-Coffee-label-material-Java-logo-smashing-revise.jpg" width="30" height="30" alt="">
-            Home
-        </a>
-    </nav>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="siteDesign.html">
+        <img src="https://filacoahuila.com/wp-content/uploads/2019/11/Coffee-cup-Cafe-Coffee-label-material-Java-logo-smashing-revise.jpg"
+             width="30" height="30" alt="">
+        Home
+    </a>
+</nav>
 
-    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-        <button type="button" class="btn btn-secondary">Info</button>
-        <button type="button" class="btn btn-secondary">Contacts</button>
+<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-secondary">Info</button>
+    <button type="button" class="btn btn-secondary">Contacts</button>
 
-        <div class="btn-group" role="group">
-            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Profile
-            </button>
-            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <a class="dropdown-item" href="#">My profile</a>
-                <a class="dropdown-item" href="login.html">Logout</a>
+    <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            Profile
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item" href="#">My profile</a>
+            <a class="dropdown-item" href="login.html">Logout</a>
+        </div>
+    </div>
+</div>
+<h1 align="center">Well, hello there!</h1>
+<div class="container">
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Age</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody id="forAdd">
+
+        <!--            <tr th:each="film : ${films}">-->
+        <!--                <td th:text="${film.id}"></td>-->
+        <!--                <td th:text="${film.title}"></td>-->
+        <!--                <td th:text="${film.rating}"></td>-->
+        <!--                <td th:text="${film.age}"></td>-->
+        <!--                <td>-->
+        <!--                    <a class="btn btn-info" th:href="@{'/films/editFilm?id=' + ${film.id}}">Edit</a>-->
+        <!--                    <a class="btn btn-danger" th:href="@{'/films/deleteFilm?id=' + ${film.id}}">Delete</a>-->
+        <!--                </td>-->
+        <!--            </tr>-->
+
+        </tbody>
+    </table>
+    <button class="btn btn-primary" onclick="test()">CLICK TO MAKE AJAX REQUEST</button>
+
+    <button type="button" data-toggle="modal" data-target="#newFilm" class="btn btn-info">
+        Add new film
+    </button>
+
+
+</div>
+<div class="modal fade" id="newFilm" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Add your film to the list!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input id="input-name" placeholder="Name (HELLo)">
+                <input id="input-rating" placeholder="Rating(87)">
+                <input id="input-age" placeholder="Age (18)">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="addFilm()">Save changes</button>
+                </div>
             </div>
         </div>
     </div>
-    <h1 align="center">Well, hello there!</h1>
-    <div class="container">
-        <table class="table table-dark">
-            <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Title</th>
-                <th scope="col">Rating</th>
-                <th scope="col">Age</th>
-                <th scope="col">Actions</th>
-            </tr>
-            </thead>
-        <tbody id="forAdd">
-
-<!--            <tr th:each="film : ${films}">-->
-<!--                <td th:text="${film.id}"></td>-->
-<!--                <td th:text="${film.title}"></td>-->
-<!--                <td th:text="${film.rating}"></td>-->
-<!--                <td th:text="${film.age}"></td>-->
-<!--                <td>-->
-<!--                    <a class="btn btn-info" th:href="@{'/films/editFilm?id=' + ${film.id}}">Edit</a>-->
-<!--                    <a class="btn btn-danger" th:href="@{'/films/deleteFilm?id=' + ${film.id}}">Delete</a>-->
-<!--                </td>-->
-<!--            </tr>-->
-
-         </tbody>
-        </table>
-        <button class="btn btn-primary" onclick="test()">CLICK TO MAKE AJAX REQUEST</button>
-        </div>
-
-
+</div>
 
 </body>
 
