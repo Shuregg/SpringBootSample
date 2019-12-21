@@ -50,3 +50,6 @@ function addFilm() {
         }
     });
 }
+function deleteFilm() {
+
+}
