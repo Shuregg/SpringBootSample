@@ -16,7 +16,9 @@ $(document).ready(function () {
                     " <button type=\"button\" data-toggle=\"modal\" data-target=\"#editFilm\" class=\"btn btn-info\" onclick=\"fillModal(" + films[i].id + ")\">" +
                     "        Edit this film\n" +
                     "    </button>" +
-                    "<a class=\"btn btn-danger\" href=\"/films/deleteFilm?id=" + films[i].id + "\">Delete</a>" +
+                    "<button type=\"button\" class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#exampleModal\">\n" +
+                    "    Delete\n" +
+                    "</button>" +
                     "</td>" +
                     "</tr>")
             }
@@ -92,4 +94,18 @@ function sendData() {
             alert("Error: wrong values.");
         }
     });
+}
+function deleteFilm(id) {
+
+    $.ajax({
+        method: "get",
+        url: "/api/film/delete?id=" + id,
+        contentType: "application/json; charset=utf-8",
+        success: function (film) {
+            window.location.replace("/films/all");
+        },
+        error: function (error) {
+
+        }
+    })
 }
